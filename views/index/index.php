@@ -1,4 +1,4 @@
-<h2>Bienvenid@ a la app bla bla.</h1>
+<h2>Bienvenid@ a Hoteleria Turismo.</h1>
 <p>Versión Beta desarrollada por empresa Corporation.</p>
 <?php
 //Forma de Encriptacion del Password

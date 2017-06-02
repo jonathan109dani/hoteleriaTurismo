@@ -61,9 +61,9 @@
                   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                       <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Secciones <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Funcionario<span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                          <li><a href="<?php echo URL; ?>seccion/index">Ver Sección</a></li>
+                          <li><a href="<?php echo URL; ?>funcionario/agregarfuncionario">Agregar Funcionario</a></li>
                           <?php if (Session::get('tipoUsuario') < 2){ ?>
                           <li><a href="<?php echo URL; ?>actualizarestudiantes/cargarSeccionesEstudiantes">Cargar Secciones Estudiantes</a></li>
                           <?php }  ?>
@@ -194,12 +194,12 @@
             <div class="row">
                 <div class="col-xs-1"></div>
                 <div class="col-xs-1">
-                    <img src="<?php echo URL; ?>public/img/logoEmpresa.png" alt="Logo Empresa" class="img-rounded pull-left img-responsive">
+                    <img src="<?php echo URL; ?>public/img/HoteleriaTurismo.png" alt="Logo Empresa" class="img-rounded pull-left img-responsive">
                 </div>
                 <div class="col-xs-8 text-center">
                     <div class="row">
                         <div class="col-xs-12">
-                            <h2>Aplicación bla bla bla</h1>
+                            <h2>Hoteleria Turismo</h1>
                             <h4><p class="text-success">Colegio Técnico Profesional de Carrizal, Dirección Regional de Alajuela Circuito -01-</p></h4>
                             <h4><p class="text-succes">Telefax: 2483-0055</p></h4>
                             <!--<label id="datetime" size="50"></label>-->
