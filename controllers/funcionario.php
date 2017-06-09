@@ -10,16 +10,38 @@ class Funcionario extends Controllers {
         $this->view->render('footer');
     }
     
+    function verFuncionarios(){
+        $this->view->title = 'Funcionario'; 
+        $this->view->render('header');
+        $this->view->listaFuncionarios = $this->model->listaFuncionarios();
+        $this->view->render('funcionario/verFuncionarios');
+        $this->view->render('footer');
+    }
+    
     function guardarFuncionario(){
         $datos = array();
         $datos ['txt_nombre'] = $_POST['txt_nombre'];
         $datos ['txt_id'] = $_POST['txt_id'];
         $datos ['txt_puesto'] = $_POST['txt_puesto'];
         $this->model->guardarFuncionario($datos);
+        header ("location: " . URL . "funcionario/verFuncionarios");
     }
-    function run(){
-        //llama a la funcion run() de login_model
-        $this->model->run();
+    
+    function editarFuncionario($id){
+        $this->view->title = 'Funcionario'; 
+        $this->view->render('header');
+        $this->view->datosFuncionario = $this->model->datosFuncionario($id);
+        $this->view->render('funcionario/editarFuncionario');
+        $this->view->render('footer');
+    }
+    
+    function actualizarFuncionario(){
+        $datos = array();
+        $datos ['txt_id'] = $_POST['txt_id'];
+        $datos ['txt_nombre'] = $_POST['txt_nombre'];
+        $datos ['txt_puesto'] = $_POST['txt_puesto'];
+        $this->model->actualizarFuncionario($datos);
+        header ("location: " . URL . "funcionario/verFuncionarios");
     }
 }
 ?>

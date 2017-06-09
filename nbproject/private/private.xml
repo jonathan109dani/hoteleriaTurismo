@@ -3,13 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/header.php</file>
-            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/index/index.php</file>
-            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/login/index.php</file>
-            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/funcionario/agregarfuncionario.php</file>
-            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/index.php</file>
-            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/config.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/models/matricula_model.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/funcionario/verFuncionarios.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/funcionario/editarFuncionario.php</file>
             <file>file:/D:/xampp/htdocs/hoteleriaTurismo/controllers/funcionario.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/models/funcionario_model.php</file>
         </group>
     </open-files>
 </project-private>
