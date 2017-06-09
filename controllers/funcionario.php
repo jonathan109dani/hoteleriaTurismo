@@ -11,8 +11,11 @@ class Funcionario extends Controllers {
     }
     
     function guardarFuncionario(){
-        echo'Guardando funcionario...</br>';
-        echo 'Nombre del funcionario: '.$_POST['txt_nombre'];
+        $datos = array();
+        $datos ['txt_nombre'] = $_POST['txt_nombre'];
+        $datos ['txt_id'] = $_POST['txt_id'];
+        $datos ['txt_puesto'] = $_POST['txt_puesto'];
+        $this->model->guardarFuncionario($datos);
     }
     function run(){
         //llama a la funcion run() de login_model

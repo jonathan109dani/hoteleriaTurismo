@@ -10,15 +10,15 @@
                 <div class="form-group">
                     <label for="txt_nombre" class="col-xs-2 control-label">Nombre completo:</label>
                     <div class="col-xs-2">
-                        <input type="text" class="text-uppercase form-control input-sm validate[required]"  id="txt_nombre" name="txt_nombre"/>
+                        <input type="text" class="form-control input-sm validate[required]"  id="txt_nombre" name="txt_nombre"/>
                     </div>
                     <label for="txt_id" class="col-xs-2 control-label">ID:</label>
                     <div class="col-xs-2">
-                        <input type="text" class="text-uppercase form-control input-sm"  id="txt_id" name="txt_id"/>
+                        <input type="text" class="form-control input-sm"  id="txt_id" name="txt_id"/>
                     </div>
                     <label for="txt_puesto" class="col-xs-2 control-label">Puesto:</label>
                     <div class="col-xs-2">
-                        <input type="text" class="text-uppercase form-control input-sm validate[required]"  id="txt_puesto" name="txt_puesto"/>
+                        <input type="text" class="form-control input-sm validate[required]"  id="txt_puesto" name="txt_puesto"/>
                     </div> 
                 </div> 
                 </br>                </br>
