@@ -66,28 +66,18 @@
                           <li><a href="<?php echo URL; ?>funcionario/agregarfuncionario">Agregar Funcionario</a></li>
                           <li><a href="<?php echo URL; ?>funcionario/verFuncionarios">Ver Funcionarios</a></li>
                           <?php if (Session::get('tipoUsuario') < 2){ ?>
-                          <li><a href="<?php echo URL; ?>actualizarestudiantes/cargarSeccionesEstudiantes">Cargar Secciones Estudiantes</a></li>
+                          
                           <?php }  ?>
                         </ul>
                       </li>
                       <?php if (Session::get('tipoUsuario') <= 3){ ?>
                       <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Estudiantes <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Habitación <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                          <li><a href="<?php echo URL; ?>persona/listaEstudiantes">Lista Estudiante</a></li>
-                          <li class="divider"></li>
-                          <?php if (Session::get('tipoUsuario') <= 2){ ?>
-                          <li><a href="<?php echo URL; ?>persona/datosEstudiantes">Datos Generales Estudiantes</a></li>
-                          <li><a href="<?php echo URL; ?>persona/nuevoIngresoTardio">Nuevo Ingreso</a></li>
-                          <li><a href="<?php echo URL; ?>persona/expedientesEstudiantes">Expedientes de Estudiantes</a></li>
-                          <li class="divider"></li>
-                          <?php } if (Session::get('tipoUsuario') <= 3){ ?>
-                          <li><a href="<?php echo URL; ?>persona/ingresarBeca">Ingresar beca transporte de Estudiantes</a></li>
-                          <li><a href="<?php echo URL; ?>persona/listaBecas">Lista becas transporte de Estudiantes</a></li>
-                          <li class="divider"></li>
-                          <li><a href="<?php echo URL; ?>persona/ingresarBecaComedor">Ingresar beca comedor de Estudiantes</a></li>
-                          <li><a href="<?php echo URL; ?>persona/listaBecasComedor">Lista becas comedor de Estudiantes</a></li>
-                          <?php }?>
+                          <li><a href="<?php echo URL; ?>habitacion/agregarHabitacion">Agregar habitación</a></li>
+                          <li><a href="<?php echo URL; ?>habitacion/verHabitacion">Ver habitación</a></li>
+                   
+                         
                         </ul>
                       </li>
                     <?php }?>

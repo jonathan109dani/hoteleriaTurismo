@@ -43,5 +43,11 @@ class Funcionario extends Controllers {
         $this->model->actualizarFuncionario($datos);
         header ("location: " . URL . "funcionario/verFuncionarios");
     }
+    
+     function eliminarFuncionario($id){
+        $this->view->title = 'Funcionario';
+        $this->model->eliminarFuncionario($id);
+        header ("location: " . URL . "funcionario/verFuncionarios");
+    }
 }
 ?>

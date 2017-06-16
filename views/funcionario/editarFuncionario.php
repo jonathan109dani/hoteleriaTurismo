@@ -16,7 +16,8 @@
                 </div>
                 <label for="txt_id" class="col-xs-2 control-label">ID:</label>
                 <div class="col-xs-2">
-                    <input type="text" class=" form-control input-sm"  id="txt_id" name="txt_id" value='<?php echo $this->datosFuncionario[0]['id']; ?>'/>
+                    <input type="text" class=" form-control input-sm"  id="txt_id" name="txt_id" value='<?php echo $this->datosFuncionario[0]['id']; ?>' disabled/>
+                    <input type="hidden" id="txt_id" name="txt_id" value='<?php echo $this->datosFuncionario[0]['id']; ?>'/>
                 </div>
                 <label for="txt_puesto" class="col-xs-2 control-label">Puesto:</label>
                 <div class="col-xs-2">

@@ -1,27 +1,29 @@
 <?php
 
-Class Funcionario_Model extends Models {
+Class Cliente_Model extends Models {
 
     public function __construct() {
         parent::__construct();
     }
 
     //Inserto Funcionario
-    public function guardarFuncionario($datos) {
+    public function guardarCliente($datos) {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
-        $consultaExistenciaPreMatricula = $this->db->select("SELECT * FROM funcionario "
+        $consultaExistenciacliente = $this->db->select("SELECT * FROM cliente "
                 . "WHERE id = '" . $datos['txt_id'] . "' ");
 
-        if ($consultaExistenciaPreMatricula != null) {
-            echo 'Error...</br>Ya existe un funcionario con ese ID';
+        if ($consultaExistenciacliente != null) {
+            echo 'Error...</br>Ya existe un cliente con ese ID';
             die;
         } else {
             //Sino Inserto datos de Pre-Matricula del Estudiante
 
-            $this->db->insert('funcionario', array(
+            $this->db->insert('cliente', array(
                 'id' => $datos['txt_id'],
                 'nombre' => $datos['txt_nombre'],
-                'puesto' => $datos['txt_puesto']));
+                'telefono' => $datos['txt_telefono'],
+                'ingreso' => $datos['txt_ingreso'],
+                'estadia' => $datos['txt_estadia']));
         }
     }
 
@@ -38,8 +40,8 @@ Class Funcionario_Model extends Models {
         if ($consultaExistenciaFuncionario != null) {
             return $consultaExistenciaFuncionario;
         } else {
-           echo 'No se ha encontrado el funcionario';
-            die; 
+            echo 'No se ha encontrado el funcionario';
+            die;
         }
     }
 
@@ -49,8 +51,8 @@ Class Funcionario_Model extends Models {
                 . "WHERE id = '" . $datos['txt_id'] . "' ");
 
         if ($consultaExistenciaPreMatricula != null) {
-                
-                $posData = array(
+
+            $posData = array(
                 'id' => $datos['txt_id'],
                 'nombre' => $datos['txt_nombre'],
                 'puesto' => $datos['txt_puesto']);
@@ -59,10 +61,10 @@ Class Funcionario_Model extends Models {
         } else {
             //Sino Inserto datos de Pre-Matricula del Estudiante
             echo 'Error...</br>Ya existe un funcionario con ese ID';
-            die;   
+            die;
         }
     }
-    
+
     public function eliminarFuncionario($id) {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
         $consultaExistenciaPreMatricula = $this->db->select("SELECT * FROM funcionario "
@@ -73,9 +75,10 @@ Class Funcionario_Model extends Models {
         } else {
             //Sino Inserto datos de Pre-Matricula del Estudiante
             echo 'Error...</br>Ya existe un funcionario con ese ID';
-            die;   
+            die;
         }
     }
+
 }
 
 ?>
