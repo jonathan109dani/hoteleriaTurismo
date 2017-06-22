@@ -14,11 +14,26 @@
                     </div>
                     <label for="txt_piso" class="col-xs-2 control-label">Piso:</label>
                     <div class="col-xs-2">
-                        <input type="text" class="form-control input-sm"  id="txt_piso" name="txt_piso"/>
+                        <select  class="form-control input-sm" name="txt_piso" id="txt_piso"> 
+                            <option value="0">Seleccione...</option> 
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
                     </div>
                     <label for="txt_tipo" class="col-xs-2 control-label">Tipo:</label>
                     <div class="col-xs-2">
-                        <input type="text" class="form-control input-sm validate[required]"  id="txt_tipo" name="txt_tipo"/>
+                        <select  class="form-control input-sm" name="txt_tipo" id="txt_tipo"> 
+                            <option value="0">Seleccione...</option> 
+                            <option value="Sencilla">Sencilla</option>
+                            <option value="Doble">Doble</option>
+                            <option value="Triple">Triple</option>
+                            <option value="Quadruple">Quadruple</option>
+                            <option value="Presi">Presi</option>
+                            <option value="Jr Suit">Jr Suit</option>
+                            <option value="Suit">Suit</option>
+                        </select>
                     </div> 
                 </div> 
                 </br>                </br>

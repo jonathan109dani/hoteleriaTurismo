@@ -10,11 +10,11 @@ class Cliente extends Controllers {
         $this->view->render('footer');
     }
     
-    function verCliente(){
+    function verClientes(){
         $this->view->title = 'Cliente'; 
         $this->view->render('header');
         $this->view->listaClientes = $this->model->listaClientes();
-        $this->view->render('cliente/verCliente');
+        $this->view->render('cliente/verClientes');
         $this->view->render('footer');
     }
     

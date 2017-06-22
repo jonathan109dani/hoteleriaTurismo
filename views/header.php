@@ -83,27 +83,12 @@
                     <?php }?>
                       <?php if (Session::get('tipoUsuario') <= 3){ ?>
                       <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Matrícula <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Cliente <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <?php if (Session::get('tipoUsuario') == 1){ ?>
-                            <li><a href="<?php echo URL; ?>matricula/prematricula">Pre-Matricula</a></li>
-                            <li><a href="<?php echo URL; ?>matricula/listaprematricula">Lista Pre-Matricula</a></li>
-                            <li class="divider"></li>
+                            <li><a href="<?php echo URL; ?>cliente/agregarCliente">Agregar Cliente</a></li>
                             <?php } if (Session::get('tipoUsuario') <= 3){ ?>
-                            <li><a href="<?php echo URL; ?>matricula/ratificarSetimo">Ratificar 7°</a></li>
-                            <li><a href="<?php echo URL; ?>matricula/ratificar">Ratificar 8° - 12°</a></li>
-                            <li><a href="<?php echo URL; ?>matricula/nuevoIngreso">Nuevo Ingreso</a></li>
-                            <li><a href="<?php echo URL; ?>matricula/estudiantesMatriculados">Ver estudainte matriculados</a></li>
-                            <?php }?>
-                            <?php if (Session::get('tipoUsuario') <= 2){ ?>
-                            <li class="divider"></li>
-                            <li><a href="<?php echo URL; ?>matricula/estudiantesMatriculadosSinGrupo">Matriculados Sin Grupo Asignado</a></li>
-                            <li><a href="<?php echo URL; ?>estadistica/matriculaInicialSegunEdad">Matricula Inicial Segun Edad</a></li>
-                            <li><a href="<?php echo URL; ?>estadistica/matriculaInicialSegunRepitencia">Matricula Inicial Segun Repitencia</a></li>
-                            <li><a href="<?php echo URL; ?>estadistica/matriculaInicialSegunModalidad">Matricula Inicial Segun Modalidad</a></li>
-                            <li><a href="<?php echo URL; ?>estadistica/lugarDeResidencia">Estadistica Lugar De Residencia</a></li>
-                            <li><a href="<?php echo URL; ?>matricula/resumenCondicionEstudiantes">Resumen Condición Estudiantes</a></li>
-                            <li><a href="<?php echo URL; ?>estadistica/estudiantesExtrangeros">Estudiantes extrangeros</a></li>
+                            <li><a href="<?php echo URL; ?>cliente/verClientes">Ver Cliente</a></li>
                             <?php }?>
                         </ul>
                       </li>

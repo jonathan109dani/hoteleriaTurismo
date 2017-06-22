@@ -6,7 +6,7 @@ Class Cliente_Model extends Models {
         parent::__construct();
     }
 
-    //Inserto Funcionario
+    //Inserto Cliente
     public function guardarCliente($datos) {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
         $consultaExistenciacliente = $this->db->select("SELECT * FROM cliente "
@@ -27,54 +27,56 @@ Class Cliente_Model extends Models {
         }
     }
 
-    public function listaFuncionarios() {
-        //ver Funcionarios
-        $consultaFuncionarios = $this->db->select("SELECT * FROM funcionario ");
-        return $consultaFuncionarios;
+    public function listaClientes() {
+        //ver Clientes
+        $consultaClientes = $this->db->select("SELECT * FROM cliente ");
+        return $consultaClientes;
     }
 
-    public function datosFuncionario($id) {
-        $consultaExistenciaFuncionario = $this->db->select("SELECT * FROM funcionario "
+    public function datosCliente($id) {
+        $consultaExistenciaCliente = $this->db->select("SELECT * FROM cliente "
                 . "WHERE id = " . $id . " ");
 
-        if ($consultaExistenciaFuncionario != null) {
-            return $consultaExistenciaFuncionario;
+        if ($consultaExistenciaCliente != null) {
+            return $consultaExistenciaCliente;
         } else {
-            echo 'No se ha encontrado el funcionario';
+            echo 'No se ha encontrado el cliente';
             die;
         }
     }
 
-    public function actualizarFuncionario($datos) {
+    public function actualizarCliente($datos) {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
-        $consultaExistenciaPreMatricula = $this->db->select("SELECT * FROM funcionario "
+        $consultaExistenciacliente = $this->db->select("SELECT * FROM cliente "
                 . "WHERE id = '" . $datos['txt_id'] . "' ");
 
-        if ($consultaExistenciaPreMatricula != null) {
+        if ($consultaExistenciacliente != null) {
 
             $posData = array(
                 'id' => $datos['txt_id'],
                 'nombre' => $datos['txt_nombre'],
-                'puesto' => $datos['txt_puesto']);
+                'telefono' => $datos['txt_telefono'],
+                'ingreso' => $datos['txt_ingreso'],
+                'estadia' => $datos['txt_estadia']);
 
-            $this->db->update('funcionario', $posData, "`id` = '{$datos['txt_id']}'");
+            $this->db->update('cliente', $posData, "`id` = '{$datos['txt_id']}'");
         } else {
             //Sino Inserto datos de Pre-Matricula del Estudiante
-            echo 'Error...</br>Ya existe un funcionario con ese ID';
+            echo 'Error...</br>Ya existe un cliente con ese ID';
             die;
         }
     }
 
-    public function eliminarFuncionario($id) {
+    public function eliminarCliente($id) {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
-        $consultaExistenciaPreMatricula = $this->db->select("SELECT * FROM funcionario "
+        $consultaExistenciacliente = $this->db->select("SELECT * FROM cliente "
                 . "WHERE id = '" . $id . "' ");
 
-        if ($consultaExistenciaPreMatricula != null) {
-            $this->db->delete('funcionario', "`id` = '{$id}'");
+        if ($consultaExistenciacliente != null) {
+            $this->db->delete('cliente', "`id` = '{$id}'");
         } else {
             //Sino Inserto datos de Pre-Matricula del Estudiante
-            echo 'Error...</br>Ya existe un funcionario con ese ID';
+            echo 'Error...</br>Ya existe un cliente con ese ID';
             die;
         }
     }
