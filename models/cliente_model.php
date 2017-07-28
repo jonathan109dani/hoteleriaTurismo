@@ -65,6 +65,7 @@ Class Cliente_Model extends Models {
             echo 'Error...</br>Ya existe un cliente con ese ID';
             die;
         }
+        
     }
 
     public function eliminarCliente($id) {

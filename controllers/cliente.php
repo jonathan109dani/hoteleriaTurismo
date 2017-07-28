@@ -26,7 +26,7 @@ class Cliente extends Controllers {
         $datos ['txt_ingreso'] = $_POST['txt_ingreso'];
         $datos ['txt_estadia'] = $_POST['txt_estadia'];
         $this->model->guardarCliente($datos);
-        header ("location: " . URL . "cliente/guardarCliente");
+        header ("location: " . URL . "cliente/verClientes");
     }
     
     function editarCliente($id){
@@ -45,13 +45,13 @@ class Cliente extends Controllers {
         $datos ['txt_ingreso'] = $_POST['txt_ingreso'];
         $datos ['txt_estadia'] = $_POST['txt_estadia'];
         $this->model->actualizarCliente($datos);
-        header ("location: " . URL . "Cliente/actualizarCliente");
+        header ("location: " . URL . "cliente/verClientes");
     }
     
      function eliminarCliente($id){
         $this->view->title = 'Cliente';
-        $this->model->eliminarFuncionario($id);
-        header ("location: " . URL . "cliente/eliminarCliente");
+        $this->model->eliminarCliente($id);
+        header ("location: " . URL . "cliente/verClientes");
     }
 }
 ?>

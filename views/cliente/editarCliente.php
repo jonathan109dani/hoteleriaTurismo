@@ -23,6 +23,7 @@
                 <div class="col-xs-2">
                     <input type="text" class=" form-control input-sm validate[required]"  id="txt_telefono" name="txt_telefono" value='<?php echo $this->datosCliente[0]['telefono']; ?>'/>
                 </div>
+                <br><br><br>
                 <label for="txt_ingreso" class="col-xs-2 control-label">Ingreso:</label>
                 <div class="col-xs-2">
                     <input type="text" class=" form-control input-sm validate[required]"  id="txt_ingreso" name="txt_ingreso" value='<?php echo $this->datosCliente[0]['ingreso']; ?>'/>

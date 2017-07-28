@@ -94,11 +94,11 @@
                       </li>
                     <?php }?>
                       <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Ausencias <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Factura <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                           <?php if (Session::get('tipoUsuario') <= 2){ ?>
-                          <li><a href="<?php echo URL; ?>actualizarestudiantes/cargarAusencias">Cargar Ausencias</a></li>
-                          <li><a href="<?php echo URL; ?>actualizarestudiantes/verAusencias">Ver Ausencias</a></li>
+                          <li><a href="<?php echo URL; ?>factura/agregarFactura">Agregar Factura</a></li>
+                          <li><a href="<?php echo URL; ?>factura/verFacturas">Ver Factura</a></li>
                           <?php } if (Session::get('tipoUsuario') == 4){ ?>
                           <li><a href="<?php echo URL; ?>actualizarestudiantes/consultarAusencias">Consultar Ausencias</a></li>
                           <?php } ?>
