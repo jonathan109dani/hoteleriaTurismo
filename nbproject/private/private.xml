@@ -3,19 +3,31 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/matricula/estudiantesPrematriculados.php</file>
             <file>file:/D:/xampp/htdocs/hoteleriaTurismo/models/cliente_model.php</file>
-            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/header.php</file>
-            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/libs/View.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/controllers/habitacion.php</file>
             <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/habitacion/agregarHabitacion.php</file>
             <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/footer.php</file>
-            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/cliente/agregarCliente.php</file>
-            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/funcionario/editarFuncionario.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/matricula/asignarSeccion.php</file>
             <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/cliente/editarCliente.php</file>
             <file>file:/D:/xampp/htdocs/hoteleriaTurismo/controllers/cliente.php</file>
-            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/models/matricula_model.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/factura/editarFactura.php</file>
             <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/funcionario/verFuncionarios.php</file>
-            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/habitacion/verHabitacion.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/matricula/editarMatricula.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/factura/agregarfactura.php</file>
             <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/cliente/verClientes.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/habitacion/editarHabitacion.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/factura/verFacturas.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/matricula/prematricula.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/header.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/controllers/factura.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/cliente/agregarCliente.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/controllers/index.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/models/funcionario_model.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/models/factura_model.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/matricula/nuevoIngreso.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/models/habitacion_model.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/habitacion/verHabitacion.php</file>
             <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/funcionario/agregarfuncionario.php</file>
             <file>file:/D:/xampp/htdocs/hoteleriaTurismo/controllers/funcionario.php</file>
         </group>

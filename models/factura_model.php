@@ -10,7 +10,7 @@ Class Factura_Model extends Models {
     public function guardarFactura($datos) {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
         $consultaExistenciaPreMatricula = $this->db->select("SELECT * FROM factura "
-                . "WHERE id = '" . $datos['txt_numeroFactura'] . "' ");
+                . "WHERE numeroFactura = '" . $datos['txt_numeroFactura'] . "' ");
 
         if ($consultaExistenciaPreMatricula != null) {
             echo 'Error...</br>Ya existe un factura con ese ID';
@@ -20,9 +20,7 @@ Class Factura_Model extends Models {
 
             $this->db->insert('factura', array(
                 'nombreCliente' => $datos['txt_nombreCliente'],
-                'habitacion' => $datos['txt_habitacion'],
-                'precio' => $datos['txt_precio'],
-                'numeroFactura' => $datos['txt_numeroFactura']));
+                'habitacion' => $datos['txt_tipo']));
             
         }
     }
@@ -32,15 +30,21 @@ Class Factura_Model extends Models {
         $consultaFacturas = $this->db->select("SELECT * FROM factura ");
         return $consultaFacturas;
     }
+    public function consultaCliente() {
+        //ver Clientes
+        $consultaCliente = $this->db->select("SELECT * FROM cliente ");
+        return $consultaCliente;
+    }
 
-    public function datosFactura($id) {
+
+    public function datosFactura($numeroFactura) {
         $consultaExistenciaFactura = $this->db->select("SELECT * FROM factura "
-                . "WHERE id = " . $id . " ");
+                . "WHERE numeroFactura = " . $numeroFactura . " ");
 
         if ($consultaExistenciaFactura != null) {
             return $consultaExistenciaFactura;
         } else {
-           echo 'No se ha encontrado el factura';
+           echo 'No se ha encontrado la factura';
             die; 
         }
     }
@@ -48,7 +52,7 @@ Class Factura_Model extends Models {
     public function actualizarFactura($datos) {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
         $consultaExistenciaPreMatricula = $this->db->select("SELECT * FROM factura "
-                . "WHERE id = '" . $datos['txt_numeroFactura'] . "' ");
+                . "WHERE numeroFactura = '" . $datos['txt_numeroFactura'] . "' ");
 
         if ($consultaExistenciaPreMatricula != null) {
                 
@@ -58,7 +62,7 @@ Class Factura_Model extends Models {
                 'precio' => $datos['txt_precio'],
                 'numeroFactura' => $datos['txt_numeroFactura']);
 
-            $this->db->update('factura', $posData, "`id` = '{$datos['txt_numeroFactura']}'");
+            $this->db->update('factura', $posData, "`numeroFactura` = '{$datos['txt_numeroFactura']}'");
         } else {
             //Sino Inserto datos de Pre-Matricula del Estudiante
             echo 'Error...</br>Ya existe un factura con ese ID';
@@ -66,13 +70,13 @@ Class Factura_Model extends Models {
         }
     }
     
-    public function eliminarFactura($id) {
+    public function eliminarFactura($numeroFactura) {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
         $consultaExistenciaPreMatricula = $this->db->select("SELECT * FROM factura "
-                . "WHERE id = '" . $id . "' ");
+                . "WHERE numeroFactura = '" . $numeroFactura . "' ");
 
         if ($consultaExistenciaPreMatricula != null) {
-            $this->db->delete('factura', "`id` = '{$id}'");
+            $this->db->delete('factura', "`numeroFactura` = '{$numeroFactura}'");
         } else {
             //Sino Inserto datos de Pre-Matricula del Estudiante
             echo 'Error...</br>Ya existe un factura con ese ID';

@@ -6,6 +6,7 @@ class Factura extends Controllers {
     function agregarfactura(){
         $this->view->title = 'Factura'; 
         $this->view->render('header');
+        $this->view->consultaCliente=$this->model->consultaCliente();
         $this->view->render('factura/agregarfactura');
         $this->view->render('footer');
     }
