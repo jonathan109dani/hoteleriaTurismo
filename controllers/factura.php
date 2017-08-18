@@ -7,6 +7,7 @@ class Factura extends Controllers {
         $this->view->title = 'Factura'; 
         $this->view->render('header');
         $this->view->consultaCliente=$this->model->consultaCliente();
+        $this->view->consultaTipoHabitacion=$this->model->consultaTipoHabitacion();
         $this->view->render('factura/agregarfactura');
         $this->view->render('footer');
     }
@@ -15,6 +16,7 @@ class Factura extends Controllers {
         $this->view->title = 'Factura'; 
         $this->view->render('header');
         $this->view->listaFacturas = $this->model->listaFacturas();
+        $this->view->consultaTipoHabitacion=$this->model->consultaTipoHabitacion();
         $this->view->render('factura/verFacturas');
         $this->view->render('footer');
     }
@@ -22,9 +24,7 @@ class Factura extends Controllers {
     function guardarFactura(){
         $datos = array();
         $datos ['txt_nombreCliente'] = $_POST['txt_nombreCliente'];
-        $datos ['txt_habitacion'] = $_POST['txt_habitacion'];
-        $datos ['txt_precio'] = $_POST['txt_precio'];
-        $datos ['txt_numeroFactura'] = $_POST['txt_numeroFactura'];
+        $datos ['txt_tipo'] = $_POST['txt_tipo'];
         $this->model->guardarFactura($datos);
         header ("location: " . URL . "factura/verFacturas");
     }
@@ -33,6 +33,8 @@ class Factura extends Controllers {
         $this->view->title = 'Factura'; 
         $this->view->render('header');
         $this->view->datosFactura = $this->model->datosFactura($id);
+        $this->view->consultaCliente=$this->model->consultaCliente($id);
+        $this->view->consultaTipoHabitacion=$this->model->consultaTipoHabitacion();
         $this->view->render('factura/editarFactura');
         $this->view->render('footer');
     }

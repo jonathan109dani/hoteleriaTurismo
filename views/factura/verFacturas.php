@@ -23,10 +23,39 @@
             echo $value['nombreCliente'];
             echo '</td>';
             echo '<td>';
-            echo $value['habitacion'];
+            if($value['habitacion']==1){
+                echo 'Sencilla';
+            }elseif($value['habitacion']==2){
+                echo 'Doble';
+            }elseif($value['habitacion']==3){
+                echo 'Triple';
+            }elseif($value['habitacion']==4){
+                echo 'Quadruple';
+            }elseif($value['habitacion']==5){
+                echo 'Presi';
+            }elseif($value['habitacion']==6){
+                echo 'Jr Suit';
+            }elseif($value['habitacion']==7){
+                echo 'Suit';
+            }
             echo '</td>';
             echo '<td>';
-            echo $value['precio'];
+            if($value['habitacion']==1){
+                echo $this->consultaTipoHabitacion[0]['precio'];
+            }elseif($value['habitacion']==2){
+                echo $this->consultaTipoHabitacion[1]['precio'];
+            }elseif($value['habitacion']==3){
+                echo $this->consultaTipoHabitacion[2]['precio'];
+            }elseif($value['habitacion']==4){
+                echo $this->consultaTipoHabitacion[3]['precio'];
+            }elseif($value['habitacion']==5){
+                echo $this->consultaTipoHabitacion[4]['precio'];
+            }elseif($value['habitacion']==6){
+                echo $this->consultaTipoHabitacion[5]['precio'];
+            }elseif($value['habitacion']==7){
+                echo $this->consultaTipoHabitacion[6]['precio'];
+            }
+//            echo $value['precio'];
             echo '</td>';
             echo '<td>';
             echo $value['numeroFactura'];

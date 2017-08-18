@@ -6,35 +6,67 @@
     <h1>Editar Factura</h1>
     <form id="MyForm" action="<?php echo URL; ?>factura/actualizarFactura" method="POST" enctype="multipart/form-data" class="form-horizontal">
         <fieldset>
-            <legend class="text-center">DATOS DEL FUNCIONARIO</legend>
-            
+            <legend class="text-center">DATOS DE FACTURA</legend>
+
             <!--L2 Nombre Estudiante (Formulario Hugo)-->
             <div class="form-group">
-                    <label for="txt_nombreCliente" class="col-xs-2 control-label">nombre Cliente:</label>
+                <label for="txt_nombreCliente" class="col-xs-2 control-label">Cliente : </label>
                 <div class="col-xs-2">
-                    <input type="text" class=" form-control input-sm validate[required]"  id="txt_nombreCliente" name="txt_nombreCliente" value='<?php echo $this->datosFactura[0]['nombreCliente']; ?>'/>
+                    <select class="form-control input-sm" name="txt_nombreCliente" id="txt_nombreCliente">
+                        <option value="">Seleccione...</option>
+                        //<?php
+//                        foreach ($this->consultaCliente as $value) {
+//
+//                            echo "<option value='" . $value['nombre'] . "'>";
+//                            echo $value['nombre'] . "</option>";
+//                        }
+//                        ?>
+                        
+                         <?php
+                        foreach ($this->consultaCliente as $value) {
+                            echo "<option value='" . $value['nombre'] . "' ";
+                            if ($value['nombre'] == $this->datosFactura[0]['nombreCliente'])
+                                echo "selected";
+                            ?> > <?php
+                            echo $value['nombre'] . "</option>";
+                        }
+                        ?>
+                    </select>
                 </div>
-                <label for="txt_habitacion" class="col-xs-2 control-label">habitacion:</label>
-                <div class="col-xs-2">
-                    <input type="text" class=" form-control input-sm"  id="txt_habitacion" name="txt_habitacion" value='<?php echo $this->datosFactura[0]['habitacion']; ?>' disabled/>
-                    <input type="hidden" id="txt_habitacion" name="txt_habitacion" value='<?php echo $this->datosFactura[0]['habitacion']; ?>'/>
-                </div>
-                <label for="txt_precio" class="col-xs-2 control-label">precio:</label>
-                <div class="col-xs-2">
-                    <input type="text" class=" form-control input-sm validate[required]"  id="txt_precio" name="txt_precio" value='<?php echo $this->datosFactura[0]['precio']; ?>'/>
+                <div class="form-group">
+
+                    <label for="txt_habitacion" class="col-xs-2 control-label">Tipo Habitación:</label>
+                    <div class="col-xs-2">
+                        <select  class="form-control input-sm validate[required]" name="txt_habitacion" id="txt_habitacion"> 
+                        <option value="">Seleccione...</option> 
+                        
+                        <?php
+                        foreach ($this->consultaTipoHabitacion as $value) {
+                            echo "<option value='" . $value['id'] . "' ";
+                            if ($value['id'] == $this->datosFactura[0]['habitacion'])
+                                echo "selected";
+                            ?> > <?php
+                            echo $value['descripcion'] . "</option>";
+                        }
+                        ?>
+                    </select>
+                    </div>
+                    
+
+
+                    <label for="txt_numeroFactura" class="col-xs-2 control-label">Numero Factura:</label>
+                    <div class="col-xs-1">
+                        <input type="text" class=" form-control input-sm validate[required]"  id="txt_numeroFactura" name="txt_numeroFactura" value='<?php echo $this->datosFactura[0]['numeroFactura']; ?>'disabled/>
+                        <input type="hidden" id="txt_habitacion" name="txt_numeroFactura" value='<?php echo $this->datosFactura[0]['numeroFactura']; ?>'/>
+                    </div> 
                 </div> 
-                <label for="txt_numeroFactura" class="col-xs-2 control-label">numero Factura:</label>
-                <div class="col-xs-2">
-                    <input type="text" class=" form-control input-sm validate[required]"  id="txt_numeroFactura" name="txt_numeroFactura" value='<?php echo $this->datosFactura[0]['numeroFactura']; ?>'/>
-                </div> 
-            </div> 
-            <br><br>
-            <!--L25 Imprimir y Guardar (Formulario Hugo)-->
-            <div class="form-group"> 
-                <div class="col-xs-12 text-center">
-                    <input type="submit" class="btn btn-primary" id="guardar" value="Guardar" />
+                <br><br>
+                <!--L25 Imprimir y Guardar (Formulario Hugo)-->
+                <div class="form-group"> 
+                    <div class="col-xs-12 text-center">
+                        <input type="submit" class="btn btn-primary" id="guardar" value="Guardar" />
+                    </div>
                 </div>
-            </div>
         </fieldset>
     </form>
 </div>

@@ -8,23 +8,13 @@ Class Factura_Model extends Models {
 
     //Inserto Factura
     public function guardarFactura($datos) {
-        //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
-        $consultaExistenciaPreMatricula = $this->db->select("SELECT * FROM factura "
-                . "WHERE numeroFactura = '" . $datos['txt_numeroFactura'] . "' ");
-
-        if ($consultaExistenciaPreMatricula != null) {
-            echo 'Error...</br>Ya existe un factura con ese ID';
-            die;
-        } else {
+         
             //Sino Inserto datos de Pre-Matricula del Estudiante
-
             $this->db->insert('factura', array(
                 'nombreCliente' => $datos['txt_nombreCliente'],
                 'habitacion' => $datos['txt_tipo']));
-            
-        }
     }
-
+    
     public function listaFacturas() {
         //ver Facturas
         $consultaFacturas = $this->db->select("SELECT * FROM factura ");
@@ -35,7 +25,13 @@ Class Factura_Model extends Models {
         $consultaCliente = $this->db->select("SELECT * FROM cliente ");
         return $consultaCliente;
     }
+     
 
+    public function consultaTipoHabitacion() {
+        //ver Clientes
+        $consultaTipo = $this->db->select("SELECT * FROM tipohabitacion ");
+        return $consultaTipo;
+    }
 
     public function datosFactura($numeroFactura) {
         $consultaExistenciaFactura = $this->db->select("SELECT * FROM factura "
