@@ -2,6 +2,7 @@
 class Cliente extends Controllers {
     function __construct(){
         parent::__construct();
+        $this->view->js = array('cliente/js/jsCliente.js', 'cliente/js/jsCliente.js');
     }
     function agregarCliente(){
         $this->view->title = 'Cliente'; 

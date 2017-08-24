@@ -12,12 +12,14 @@
             <th>Nombre</th>
             <th>Telefono</th>
             <th>Ingreso</th>
-            <th>Estadia</th>
-            <th colspan="2" class="text-center">Acción</th>
+            <th>Salida</th>
+            <?php if (Session::get('tipoUsuario') <= 1) { ?>
+                <th colspan="2" class="text-center">Acción</th>
+            <?php } ?>
         </tr>
         <?php
         $con = 1;
-        $mensaje="'¿Desea eliminar este Cliente?'";
+        $mensaje = "'¿Desea eliminar este Cliente?'";
         foreach ($this->listaClientes as $lista => $value) {
             echo '<tr>';
             echo '<td>';
@@ -36,8 +38,14 @@
             echo $value['estadia'];
             echo '</td>';
             echo '<td class=text-center>';
-            echo '<a class="btn-sm btn-primary" href="editarCliente/' . $value['id'] . '">Editar</a>&nbsp &nbsp &nbsp';
-            echo '<a class="btn-sm btn-warning" href="eliminarCliente/' . $value['id'] . '" onclick ="return confirm ('. $mensaje .')">Eliminar</a>';
+            ?>
+            <?php if (Session::get('tipoUsuario') <= 1) { ?>
+                <?php
+                echo '<a class="btn-sm btn-primary" href="editarCliente/' . $value['id'] . '">Editar</a>&nbsp &nbsp &nbsp';
+                echo '<a class="btn-sm btn-warning" href="eliminarCliente/' . $value['id'] . '" onclick ="return confirm(' . $mensaje . ')">Eliminar</a>';
+                ?>
+            <?php } ?>
+            <?php
             echo '</td>';
             echo '</tr>';
             $con++;

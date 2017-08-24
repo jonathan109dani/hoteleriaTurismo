@@ -21,14 +21,22 @@
                         <input type="text" class="form-control input-sm validate[required]"  id="txt_telefono" name="txt_telefono"/>
                     </div>
                     <br><br><br>
-                    <label for="txt_ingreso" class="col-xs-2 control-label">Ingreso:</label>
+<!--                    <label for="txt_ingreso" class="col-xs-2 control-label">Ingreso:</label>
+                    <div class="col-xs-2">
+                        <input type="text" class="form-control input-sm validate[required]"  id="txt_ingreso" name="txt_ingreso"/>
+                    </div>-->
+                    <label for="txt_ingreso" class="col-xs-2 control-label">Fecha de Ingreso:</label>
                     <div class="col-xs-2">
                         <input type="text" class="form-control input-sm validate[required]"  id="txt_ingreso" name="txt_ingreso"/>
                     </div>
-                    <label for="txt_estadia" class="col-xs-2 control-label">Estadia:</label>
+<!--                    <label for="txt_estadia" class="col-xs-2 control-label">Estadia:</label>
                     <div class="col-xs-2">
                         <input type="text" class="form-control input-sm validate[required]"  id="txt_estadia" name="txt_estadia"/>
-                    </div>                    
+                    </div>-->
+                    <label for="txt_estadia" class="col-xs-2 control-label">Fecha de Salida:</label>
+                    <div class="col-xs-2">
+                        <input type="text" class="form-control input-sm validate[required]"  id="txt_estadia" name="txt_estadia"/>
+                    </div>
                 </div> 
                 </br>                </br>
 

@@ -39,6 +39,16 @@ class Factura extends Controllers {
         $this->view->render('footer');
     }
     
+    function cancelarFactura($id){
+        $this->view->title = 'Factura'; 
+        $this->view->render('header');
+        $this->view->datosFactura = $this->model->datosFactura($id);
+        $this->view->consultaCliente=$this->model->consultaCliente($id);
+        $this->view->consultaTipoHabitacion=$this->model->consultaTipoHabitacion();
+        $this->view->render('factura/cancelarFactura');
+        $this->view->render('footer');
+    }
+    
     function actualizarFactura(){
         $datos = array();
         $datos ['txt_nombreCliente'] = $_POST['txt_nombreCliente'];

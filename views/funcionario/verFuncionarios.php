@@ -10,8 +10,9 @@
         <tr>
             <th>ID</th>
             <th>Nombre</th>
-            <th>Puesto</th>
-            <th colspan="2" class="text-center">Acción</th>
+            <th>Puesto</th><?php if (Session::get('tipoUsuario') <= 1) { ?>
+                <th colspan="2" class="text-center">Acción</th>
+            <?php } ?>
         </tr>
         <?php
         $con = 1;
@@ -28,8 +29,14 @@
             echo $value['puesto'];
             echo '</td>';
             echo '<td class=text-center>';
-            echo '<a class="btn-sm btn-primary" href="editarFuncionario/' . $value['id'] . '">Editar</a>&nbsp &nbsp &nbsp';
-            echo '<a class="btn-sm btn-warning" href="eliminarFuncionario/' . $value['id'] . '" onclick ="return confirm ('. $mensaje .')">Eliminar</a>';
+            ?>
+            <?php if (Session::get('tipoUsuario') <= 1) { ?>
+                <?php
+                echo '<a class="btn-sm btn-primary" href="editarFactura/' . $value['numeroFactura'] . '">Editar</a>&nbsp &nbsp &nbsp';
+                echo '<a class="btn-sm btn-warning" href="eliminarFactura/' . $value['numeroFactura'] . '" onclick ="return confirm('. $mensaje .')">Eliminar</a>';
+                ?>
+            <?php } ?>
+            <?php
             echo '</td>';
             echo '</tr>';
             $con++;
