@@ -3,7 +3,7 @@
 //die;
 ?>
 <div class="row">
-    <h1>Editar Factura</h1>
+    <h1>Editar Check out</h1>
     <form id="MyForm" action="<?php echo URL; ?>factura/actualizarFactura" method="POST" enctype="multipart/form-data" class="form-horizontal">
         <fieldset>
             <legend class="text-center">DATOS DE FACTURA</legend>
@@ -14,13 +14,6 @@
                 <div class="col-xs-2">
                     <select class="form-control input-sm" name="txt_nombreCliente" id="txt_nombreCliente">
                         <option value="">Seleccione...</option>
-                        //<?php
-//                        foreach ($this->consultaCliente as $value) {
-//
-//                            echo "<option value='" . $value['nombre'] . "'>";
-//                            echo $value['nombre'] . "</option>";
-//                        }
-//                        ?>
                         
                          <?php
                         foreach ($this->consultaCliente as $value) {
@@ -54,7 +47,7 @@
                     
 
 
-                    <label for="txt_numeroFactura" class="col-xs-2 control-label">Numero Factura:</label>
+                    <label for="txt_numeroFactura" class="col-xs-2 control-label">Numero Habitación:</label>
                     <div class="col-xs-1">
                         <input type="text" class=" form-control input-sm validate[required]"  id="txt_numeroFactura" name="txt_numeroFactura" value='<?php echo $this->datosFactura[0]['numeroFactura']; ?>'disabled/>
                         <input type="hidden" id="txt_habitacion" name="txt_numeroFactura" value='<?php echo $this->datosFactura[0]['numeroFactura']; ?>'/>

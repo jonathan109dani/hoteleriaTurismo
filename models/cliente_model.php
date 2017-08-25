@@ -23,7 +23,8 @@ Class Cliente_Model extends Models {
                 'nombre' => $datos['txt_nombre'],
                 'telefono' => $datos['txt_telefono'],
                 'ingreso' => $datos['txt_ingreso'],
-                'estadia' => $datos['txt_estadia']));
+                'estadia' => $datos['txt_estadia'],
+                'tarjeta' => $datos['txt_tarjeta']));
         }
     }
 
@@ -57,7 +58,8 @@ Class Cliente_Model extends Models {
                 'nombre' => $datos['txt_nombre'],
                 'telefono' => $datos['txt_telefono'],
                 'ingreso' => $datos['txt_ingreso'],
-                'estadia' => $datos['txt_estadia']);
+                'estadia' => $datos['txt_estadia'],
+                'tarjeta' => $datos['txt_tarjeta']);
 
             $this->db->update('cliente', $posData, "`id` = '{$datos['txt_id']}'");
         } else {

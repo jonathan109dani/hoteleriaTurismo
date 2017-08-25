@@ -13,7 +13,8 @@
             <th>Telefono</th>
             <th>Ingreso</th>
             <th>Salida</th>
-            <?php if (Session::get('tipoUsuario') <= 1) { ?>
+            <th>Tarjeta de Credito</th>
+            <?php if (Session::get('tipoUsuario') <= 2) { ?>
                 <th colspan="2" class="text-center">Acción</th>
             <?php } ?>
         </tr>
@@ -37,9 +38,12 @@
             echo '<td>';
             echo $value['estadia'];
             echo '</td>';
+            echo '<td>';
+            echo $value['tarjeta'];
+            echo '</td>';
             echo '<td class=text-center>';
             ?>
-            <?php if (Session::get('tipoUsuario') <= 1) { ?>
+            <?php if (Session::get('tipoUsuario') <= 2) { ?>
                 <?php
                 echo '<a class="btn-sm btn-primary" href="editarCliente/' . $value['id'] . '">Editar</a>&nbsp &nbsp &nbsp';
                 echo '<a class="btn-sm btn-warning" href="eliminarCliente/' . $value['id'] . '" onclick ="return confirm(' . $mensaje . ')">Eliminar</a>';

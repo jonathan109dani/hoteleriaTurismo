@@ -74,16 +74,22 @@
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Habitación <span class="caret"></span></a>
                                         <ul class="dropdown-menu" role="menu">
-                                            <?php if (Session::get('tipoUsuario') <= 1) { ?>
+                                            <?php if (Session::get('tipoUsuario') == 3) { ?>
+                                                <li><a href="<?php echo URL; ?>habitacionCliente/verHabitacionCliente">Ver Habitación</a></li>
+                                            <?php } ?>
+                                            <?php if (Session::get('tipoUsuario') <= 2) { ?>
                                                 <li><a href="<?php echo URL; ?>habitacion/agregarHabitacion">Agregar habitación</a></li>
 
                                             <?php } ?>
-                                            <li><a href="<?php echo URL; ?>habitacion/verHabitacion">Ver habitación</a></li>
+
+                                            <?php if (Session::get('tipoUsuario') <= 2) { ?>
+                                                <li><a href="<?php echo URL; ?>habitacion/verHabitacion">Ver Habitación</a></li>
+                                            <?php } ?>
 
 
                                         </ul>
                                     </li>
-                                    <?php if (Session::get('tipoUsuario') <= 1) { ?>
+                                    <?php if (Session::get('tipoUsuario') <= 2) { ?>
                                         <li class="dropdown">
                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Cliente <span class="caret"></span></a>
                                             <ul class="dropdown-menu" role="menu">
@@ -93,17 +99,17 @@
                                         </li>
                                     <?php } ?>
 
-                                    <?php if (Session::get('tipoUsuario') <= 1) { ?>
+                                    <?php if (Session::get('tipoUsuario') <= 2) { ?>
                                         <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Factura <span class="caret"></span></a>
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Check In <span class="caret"></span></a>
                                             <ul class="dropdown-menu" role="menu">
-                                                <li><a href="<?php echo URL; ?>factura/agregarFactura">Agregar Factura</a></li>
+                                                <li><a href="<?php echo URL; ?>factura/agregarFactura">Check In</a></li>
 
-                                                <li><a href="<?php echo URL; ?>factura/verFacturas">Ver Factura</a></li>
+                                                <li><a href="<?php echo URL; ?>factura/verFacturas">Ver Check In</a></li>
                                             </ul>
                                         </li>
                                     <?php } ?>
-                                   
+
                                 </ul>
                                 <ul class="nav navbar-nav navbar-right">
                                     <li class="dropdown">
@@ -157,7 +163,7 @@
                     <div class="col-xs-12">
                         <h2>Hoteleria Turismo</h1>
                             <h4><p class="text-success">Colegio Técnico Profesional de Carrizal, Dirección Regional de Alajuela Circuito -01-</p></h4>
-                            
+
                             <!--<label id="datetime" size="50"></label>-->
                     </div>
                 </div>

@@ -2,6 +2,8 @@
 class Habitacion extends Controllers {
     function __construct(){
         parent::__construct();
+        Auth::handleLogin();
+        Auth::nivelDeSeguridad2();
     }
     function agregarHabitacion(){
         $this->view->title = 'Habitacion'; 

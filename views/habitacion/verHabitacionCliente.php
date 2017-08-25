@@ -11,9 +11,7 @@
             <th>Numero</th>
             <th>Piso</th>
             <th>Tipo</th>
-            <?php if (Session::get('tipoUsuario') <= 2) { ?>
-                <th colspan="2" class="text-center">Acción</th>
-            <?php } ?>
+
         </tr>
         <?php
         $con = 1;
@@ -28,16 +26,6 @@
             echo '</td>';
             echo '<td>';
             echo $value['tipo'];
-            echo '</td>';
-            echo '<td class=text-center>';
-            ?>
-            <?php if (Session::get('tipoUsuario') <= 2) { ?>
-                <?php
-                echo'<a class = "btn-sm btn-primary" href = "editarHabitacion/' . $value['numero'] . '">Editar</a>&nbsp &nbsp &nbsp';
-                echo'<a class = "btn-sm btn-warning" href = "eliminarHabitacion/' . $value['numero'] . '" onclick = "return confirm('. $mensaje .')">Eliminar</a>';
-                ?>
-            <?php } ?>
-            <?php
             echo '</td>';
             echo '</tr>';
             $con++;

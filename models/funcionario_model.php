@@ -38,8 +38,8 @@ Class Funcionario_Model extends Models {
         if ($consultaExistenciaFuncionario != null) {
             return $consultaExistenciaFuncionario;
         } else {
-           echo 'No se ha encontrado el funcionario';
-            die; 
+            echo 'No se ha encontrado el funcionario';
+            die;
         }
     }
 
@@ -49,8 +49,8 @@ Class Funcionario_Model extends Models {
                 . "WHERE id = '" . $datos['txt_id'] . "' ");
 
         if ($consultaExistenciaPreMatricula != null) {
-                
-                $posData = array(
+
+            $posData = array(
                 'id' => $datos['txt_id'],
                 'nombre' => $datos['txt_nombre'],
                 'puesto' => $datos['txt_puesto']);
@@ -59,10 +59,10 @@ Class Funcionario_Model extends Models {
         } else {
             //Sino Inserto datos de Pre-Matricula del Estudiante
             echo 'Error...</br>Ya existe un funcionario con ese ID';
-            die;   
+            die;
         }
     }
-    
+
     public function eliminarFuncionario($id) {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
         $consultaExistenciaPreMatricula = $this->db->select("SELECT * FROM funcionario "
@@ -73,9 +73,17 @@ Class Funcionario_Model extends Models {
         } else {
             //Sino Inserto datos de Pre-Matricula del Estudiante
             echo 'Error...</br>Ya existe un funcionario con ese ID';
-            die;   
+            die;
         }
     }
+
+    public function buscarEstuRatif($ced_estudiante) {
+        $resultado = $this->db->select("SELECT * "
+                . "FROM funcionario "
+                . "WHERE id = '" . $ced_estudiante . "'");
+        echo json_encode($resultado);
+    }
+
 }
 
 ?>

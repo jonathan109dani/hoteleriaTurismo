@@ -12,7 +12,8 @@ Class Factura_Model extends Models {
             //Sino Inserto datos de Pre-Matricula del Estudiante
             $this->db->insert('factura', array(
                 'nombreCliente' => $datos['txt_nombreCliente'],
-                'habitacion' => $datos['txt_tipo']));
+                'habitacion' => $datos['txt_tipo'],
+                'numeroFactura' => $datos['txt_numeroFactura']));
     }
     
     public function listaFacturas() {
@@ -25,7 +26,11 @@ Class Factura_Model extends Models {
         $consultaCliente = $this->db->select("SELECT * FROM cliente ");
         return $consultaCliente;
     }
-     
+     public function consultaNuHabitacion() {
+        //ver Clientes
+        $consultaNuHabitacion = $this->db->select("SELECT * FROM habitacion ");
+        return $consultaNuHabitacion;
+    }
 
     public function consultaTipoHabitacion() {
         //ver Clientes
@@ -62,6 +67,24 @@ Class Factura_Model extends Models {
         } else {
             //Sino Inserto datos de Pre-Matricula del Estudiante
             echo 'Error...</br>Ya existe un factura con ese ID';
+            die;   
+        }
+    }
+    
+     public function actualizarHabitacion($datos) {
+        //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
+        $consultaExistenciaPreMatricula = $this->db->select("SELECT * FROM habitacion "
+                . "WHERE numero = '" . $datos['txt_numeroFactura'] . "' ");
+
+        if ($consultaExistenciaPreMatricula != null) {
+                $num=1;
+                $posData = array(
+                'Estado' =>$num );
+
+            $this->db->update('habitacion', $posData, "`numero` = '{$datos['txt_numero']}'");
+        } else {
+            //Sino Inserto datos de Pre-Matricula del Estudiante
+            echo 'Error...</br>Ya existe una habitacion con ese numero';
             die;   
         }
     }

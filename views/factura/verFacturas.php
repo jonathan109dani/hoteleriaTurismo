@@ -11,8 +11,8 @@
             <th>Nombre Cliente</th>
             <th>Tipo de Habitación</th>
             <th>Precio</th>
-            <th>Número Factura</th>
-            <?php if (Session::get('tipoUsuario') <= 1) { ?>
+            <th>Número de Habiración</th>
+            <?php if (Session::get('tipoUsuario') <= 2) { ?>
                 <th colspan="2" class="text-center">Acción</th>
             <?php } ?>
 
@@ -65,11 +65,11 @@
             echo '</td>';
             echo '<td class=text-center>';
             ?>
-            <?php if (Session::get('tipoUsuario') <= 1) { ?>
+            <?php if (Session::get('tipoUsuario') <= 2) { ?>
                 <?php
                 echo '<a class="btn-sm btn-primary" href="editarFactura/' . $value['numeroFactura'] . '">Editar</a>&nbsp &nbsp &nbsp';
                 echo '<a class="btn-sm btn-warning" href="eliminarFactura/' . $value['numeroFactura'] . '" onclick ="return confirm(' . $mensaje . ')">Eliminar</a>&nbsp &nbsp &nbsp';
-                echo '<a class="btn-sm btn-success" href="cancelarFactura/' . $value['numeroFactura'] . '">Cancelar</a>&nbsp &nbsp &nbsp';
+                echo '<a class="btn-sm btn-success" href="cancelarFactura/' . $value['numeroFactura'] . '">Check out</a>&nbsp &nbsp &nbsp';
                 
                 ?>     
             <?php } ?>
