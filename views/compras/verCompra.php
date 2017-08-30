@@ -5,7 +5,7 @@
 <center>
     <br>
     <div class="col-xs-3">
-        Búsqueda por tipo de habitación:
+        Búsqueda por identificación:
     </div>
     <div class="col-xs-1">
         <input type="text" class="input-sm validate[required]" name="tf_cedulaEstudiante" id="tf_cedulaEstudiante" />
@@ -17,36 +17,35 @@
     <br>
     <table class="table table-condensed" id="tablaRatificar">
         <tr>
-            <th colspan="6" class="nombreTabla text-center">Lista de Habitaciones</th>
+            <th colspan="6" class="nombreTabla text-center">Lista de Funcionarios</th>
         </tr>
         <tr>
-            <th>Numero</th>
-            <th>Piso</th>
-            <th>Tipo</th>
-            <?php if (Session::get('tipoUsuario') <= 2) { ?>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Puesto</th><?php if (Session::get('tipoUsuario') <= 1) { ?>
                 <th colspan="2" class="text-center">Acción</th>
             <?php } ?>
         </tr>
         <?php
         $con = 1;
-        $mensaje = "'¿Desea eliminar esta habitacion?'";
-        foreach ($this->listaHabitacion as $lista => $value) {
+        $mensaje = "'¿Desea eliminar este funcionario?'";
+        foreach ($this->listaFuncionarios as $lista => $value) {
             echo '<tr>';
             echo '<td>';
-            echo $value['numero'];
+            echo $value['id'];
             echo '</td>';
             echo '<td>';
-            echo $value['piso'];
+            echo $value['nombre'];
             echo '</td>';
             echo '<td>';
-            echo $value['tipo'];
+            echo $value['puesto'];
             echo '</td>';
             echo '<td class=text-center>';
             ?>
-            <?php if (Session::get('tipoUsuario') <= 2) { ?>
+            <?php if (Session::get('tipoUsuario') <= 1) { ?>
                 <?php
-                echo'<a class = "btn-sm btn-primary" href = "editarHabitacion/' . $value['numero'] . '">Editar</a>&nbsp &nbsp &nbsp';
-                echo'<a class = "btn-sm btn-warning" href = "eliminarHabitacion/' . $value['numero'] . '" onclick = "return confirm('. $mensaje .')">Eliminar</a>';
+                echo '<a class="btn-sm btn-primary" href="editarFuncionario/' . $value['id'] . '">Editar</a>&nbsp &nbsp &nbsp';
+                echo '<a class="btn-sm btn-warning" href="eliminarFuncionario/' . $value['id'] . '" onclick ="return confirm(' . $mensaje . ')">Eliminar</a>';
                 ?>
             <?php } ?>
             <?php

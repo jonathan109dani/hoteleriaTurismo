@@ -76,6 +76,14 @@ Class Habitacion_Model extends Models {
             die;   
         }
     }
+    
+    public function buscarEstuRatif($ced_estudiante) {
+        $resultado = $this->db->select("SELECT * "
+                . "FROM habitacion "
+                . "WHERE tipo LIKE '%". $ced_estudiante . "%'");
+        echo json_encode($resultado);
+    }
+
 }
 
 ?>

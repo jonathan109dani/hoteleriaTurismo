@@ -109,7 +109,19 @@
                                             </ul>
                                         </li>
                                     <?php } ?>
+                                    <?php if (Session::get('tipoUsuario') <= 2) { ?>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Precio<span class="caret"></span></a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="<?php echo URL; ?>precio/verPrecio">Precios</a></li>
 
+                                            </ul>
+                                        </li>
+                                    <?php } ?>
+
+                                    <?php if (Session::get('tipoUsuario') <= 2) { ?>
+                                        <li><a class="navbar-nav" href="<?php echo URL; ?>compra/verCompra">Compras u otros cargos</a></li>                                  
+                                    <?php } ?>
                                 </ul>
                                 <ul class="nav navbar-nav navbar-right">
                                     <li class="dropdown">

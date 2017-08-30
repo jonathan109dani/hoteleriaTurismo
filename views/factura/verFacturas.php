@@ -11,7 +11,7 @@
             <th>Nombre Cliente</th>
             <th>Tipo de Habitación</th>
             <th>Precio</th>
-            <th>Número de Habiración</th>
+            <th>Número de Habitación</th>
             <?php if (Session::get('tipoUsuario') <= 2) { ?>
                 <th colspan="2" class="text-center">Acción</th>
             <?php } ?>

@@ -3,11 +3,36 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/models/cliente_model.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/habitacion/verHabitacionCliente.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/controllers/habitacion.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/footer.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/matricula/js/default.js</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/cliente/editarCliente.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/funcionario/js/jsFuncionario.js</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/controllers/cliente.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/factura/editarFactura.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/funcionario/verFuncionarios.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/error/errorFechas.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/factura/agregarfactura.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/cliente/verClientes.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/util/Auth.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/factura/verFacturas.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/matricula/ratificar.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/header.php</file>
             <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/factura/cancelarFactura.php</file>
             <file>file:/D:/xampp/htdocs/hoteleriaTurismo/controllers/factura.php</file>
-            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/factura/agregarfactura.php</file>
-            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/factura/verFacturas.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/cliente/agregarCliente.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/funcionario/editarFuncionario.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/controllers/habitacionCliente.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/config.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/models/funcionario_model.php</file>
             <file>file:/D:/xampp/htdocs/hoteleriaTurismo/models/factura_model.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/models/habitacion_model.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/views/habitacion/verHabitacion.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/models/habitacionCliente_model.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/controllers/funcionario.php</file>
+            <file>file:/D:/xampp/htdocs/hoteleriaTurismo/models/login_model.php</file>
         </group>
     </open-files>
 </project-private>

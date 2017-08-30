@@ -8,25 +8,27 @@ Class Factura_Model extends Models {
 
     //Inserto Factura
     public function guardarFactura($datos) {
-         
-            //Sino Inserto datos de Pre-Matricula del Estudiante
-            $this->db->insert('factura', array(
-                'nombreCliente' => $datos['txt_nombreCliente'],
-                'habitacion' => $datos['txt_tipo'],
-                'numeroFactura' => $datos['txt_numeroFactura']));
+
+        //Sino Inserto datos de Pre-Matricula del Estudiante
+        $this->db->insert('factura', array(
+            'nombreCliente' => $datos['txt_nombreCliente'],
+            'habitacion' => $datos['txt_tipo'],
+            'numeroFactura' => $datos['txt_numeroFactura']));
     }
-    
+
     public function listaFacturas() {
         //ver Facturas
         $consultaFacturas = $this->db->select("SELECT * FROM factura ");
         return $consultaFacturas;
     }
+
     public function consultaCliente() {
         //ver Clientes
         $consultaCliente = $this->db->select("SELECT * FROM cliente ");
         return $consultaCliente;
     }
-     public function consultaNuHabitacion() {
+
+    public function consultaNuHabitacion() {
         //ver Clientes
         $consultaNuHabitacion = $this->db->select("SELECT * FROM habitacion ");
         return $consultaNuHabitacion;
@@ -45,8 +47,8 @@ Class Factura_Model extends Models {
         if ($consultaExistenciaFactura != null) {
             return $consultaExistenciaFactura;
         } else {
-           echo 'No se ha encontrado la factura';
-            die; 
+            echo 'No se ha encontrado la factura';
+            die;
         }
     }
 
@@ -56,8 +58,8 @@ Class Factura_Model extends Models {
                 . "WHERE numeroFactura = '" . $datos['txt_numeroFactura'] . "' ");
 
         if ($consultaExistenciaPreMatricula != null) {
-                
-                $posData = array(
+
+            $posData = array(
                 'nombreCliente' => $datos['txt_nombreCliente'],
                 'habitacion' => $datos['txt_habitacion'],
                 'precio' => $datos['txt_precio'],
@@ -67,28 +69,28 @@ Class Factura_Model extends Models {
         } else {
             //Sino Inserto datos de Pre-Matricula del Estudiante
             echo 'Error...</br>Ya existe un factura con ese ID';
-            die;   
+            die;
         }
     }
-    
-     public function actualizarHabitacion($datos) {
+
+    public function actualizarHabitacion($datos) {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
         $consultaExistenciaPreMatricula = $this->db->select("SELECT * FROM habitacion "
                 . "WHERE numero = '" . $datos['txt_numeroFactura'] . "' ");
 
         if ($consultaExistenciaPreMatricula != null) {
-                $num=1;
-                $posData = array(
-                'Estado' =>$num );
+            $num = 1;
+            $posData = array(
+                'Estado' => $num);
 
             $this->db->update('habitacion', $posData, "`numero` = '{$datos['txt_numero']}'");
         } else {
             //Sino Inserto datos de Pre-Matricula del Estudiante
             echo 'Error...</br>Ya existe una habitacion con ese numero';
-            die;   
+            die;
         }
     }
-    
+
     public function eliminarFactura($numeroFactura) {
         //Guardo los datos en Pre-Matricula, luego hay que ratificar para que consolide la matricula
         $consultaExistenciaPreMatricula = $this->db->select("SELECT * FROM factura "
@@ -99,9 +101,17 @@ Class Factura_Model extends Models {
         } else {
             //Sino Inserto datos de Pre-Matricula del Estudiante
             echo 'Error...</br>Ya existe un factura con ese ID';
-            die;   
+            die;
         }
     }
+
+    public function buscarHabitacionesLibres() {
+        $resultado = $this->db->select("SELECT numero "
+                . "FROM habitacion "
+                . "WHERE numero NOT IN (SELECT numeroFactura FROM factura) ");
+        return $resultado;
+    }
+
 }
 
 ?>

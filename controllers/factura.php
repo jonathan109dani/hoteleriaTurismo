@@ -11,7 +11,8 @@ class Factura extends Controllers {
         $this->view->consultaCliente=$this->model->consultaCliente();
         $this->view->consultaTipoHabitacion=$this->model->consultaTipoHabitacion();
         $this->view->consultaNuHabitacion=$this->model->consultaNuHabitacion();
-         $this->view->listaFacturas=$this->model->listaFacturas();
+        $this->view->listaFacturas=$this->model->listaFacturas();
+         $this->view->buscarHabitacionesLibres=$this->model->buscarHabitacionesLibres();
         $this->view->render('factura/agregarfactura');
         $this->view->render('footer');
     }

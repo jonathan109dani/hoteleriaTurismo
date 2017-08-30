@@ -38,7 +38,7 @@
                     <select  class="form-control input-sm validate[required]" name="txt_numeroFactura" id="txt_numeroFactura"> 
                         <option value="">Seleccione...</option> 
                         <?php
-                        foreach ($this->consultaNuHabitacion as $value) {
+                        foreach ($this->buscarHabitacionesLibres as $value) {
                             
                                     echo "<option value='" . $value['numero'] . "'>";
                                     echo $value['numero'] . "</option>";   
