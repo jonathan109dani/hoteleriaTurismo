@@ -20,10 +20,20 @@
                     <input type="text" class=" form-control input-sm"  id="txt_piso" name="txt_piso" value='<?php echo $this->datosHabitacion[0]['piso']; ?>' disabled/>
                     <input type="hidden" id="txt_piso" name="txt_piso" value='<?php echo $this->datosHabitacion[0]['piso']; ?>'/>
                 </div>
-                <label for="txt_tipo" class="col-xs-2 control-label">Tipo: </label>
-                <div class="col-xs-2">
-                    <input type="text" class=" form-control input-sm validate[required]"  id="txt_tipo" name="txt_tipo" value='<?php echo $this->datosHabitacion[0]['tipo']; ?>'/>
-                </div> 
+                                    <label for="txt_tipo" class="col-xs-2 control-label">Tipo:</label>
+                    <div class="col-xs-2">
+                        <select  class="form-control input-sm" name="txt_tipo" id="txt_tipo">   
+                            <?php
+                            foreach ($this->listaHabitaciones as $value) {
+                                echo "<option value='" . $value['descripcion'] . "' ";
+                                if ($value['descripcion'] == $this->datosHabitacion[0]['tipo'])
+                                    echo "selected";
+                                ?> > <?php
+                                echo $value['descripcion'] . "</option>";
+                            }
+                            ?>
+                        </select>
+                    </div> 
             </div> 
             <br><br>
             <!--L25 Imprimir y Guardar (Formulario Hugo)-->

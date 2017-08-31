@@ -5,14 +5,16 @@ class Compra extends Controllers {
     function __construct() {
         parent::__construct();
         Auth::handleLogin();
-        Auth::nivelDeSeguridad();
+        Auth::nivelDeSeguridad2();
         $this->view->js = array('funcionario/js/jsFuncionario.js');
     }
 
-    function agregarfuncionario() {
-        $this->view->title = 'Funcionario';
+    function agregarCompra() {
+        $this->view->title = 'Compra';
         $this->view->render('header');
-        $this->view->render('funcionario/agregarfuncionario');
+        $this->view->consultaHabitacionOcupada = $this->model->consultaHabitacionOcupada();
+        $this->view->consultaProductos = $this->model->consultaProductos();
+        $this->view->render('compras/agregarCompra');
         $this->view->render('footer');
     }
 
@@ -41,13 +43,12 @@ class Compra extends Controllers {
         $this->view->render('footer');
     }
 
-    function actualizarFuncionario() {
+    function actualizarCompra() {
         $datos = array();
-        $datos ['txt_id'] = $_POST['txt_id'];
-        $datos ['txt_nombre'] = $_POST['txt_nombre'];
-        $datos ['txt_puesto'] = $_POST['txt_puesto'];
-        $this->model->actualizarFuncionario($datos);
-        header("location: " . URL . "funcionario/verFuncionarios");
+        $datos ['txt_numeroH'] = $_POST['txt_numeroH'];
+        $datos ['txt_compra'] = $_POST['txt_compra'];
+        $this->model->guardarProducto($datos);
+        header("location: " . URL );
     }
 
     function eliminarFuncionario($id) {
@@ -56,9 +57,6 @@ class Compra extends Controllers {
         header("location: " . URL . "funcionario/verFuncionarios");
     }
 
-    function buscarEstuRatif($ced_estudiante) {
-        $this->model->buscarEstuRatif($ced_estudiante);
-    }
 
 }
 

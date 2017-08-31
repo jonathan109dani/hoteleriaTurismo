@@ -39,14 +39,22 @@
                         <option value="">Seleccione...</option> 
                         <?php
                         foreach ($this->buscarHabitacionesLibres as $value) {
-                            
-                                    echo "<option value='" . $value['numero'] . "'>";
-                                    echo $value['numero'] . "</option>";   
-                            
+
+                            echo "<option value='" . $value['numero'] . "'>";
+                            echo $value['numero'] . "</option>";
                         }
                         ?>
                     </select>
-                </div> 
+                </div>
+                </br>                </br>
+                <label for="txt_ingreso" class="col-xs-2 control-label">Fecha de Ingreso:</label>
+                <div class="col-xs-2">
+                    <input type="text" class="form-control input-sm validate[required]"  id="txt_ingreso" name="txt_ingreso"/>
+                </div>
+                <label for="txt_estadia" class="col-xs-2 control-label">Fecha de Salida:</label>
+                <div class="col-xs-2">
+                    <input type="text" class="form-control input-sm validate[required]"  id="txt_estadia" name="txt_estadia"/>
+                </div>
             </div>
 
             </div> 

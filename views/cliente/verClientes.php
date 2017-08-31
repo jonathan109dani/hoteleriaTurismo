@@ -11,8 +11,6 @@
             <th>ID</th>
             <th>Nombre</th>
             <th>Telefono</th>
-            <th>Ingreso</th>
-            <th>Salida</th>
             <th>Tarjeta de Credito</th>
             <?php if (Session::get('tipoUsuario') <= 2) { ?>
                 <th colspan="2" class="text-center">Acción</th>
@@ -31,12 +29,6 @@
             echo '</td>';
             echo '<td>';
             echo $value['telefono'];
-            echo '</td>';
-            echo '<td>';
-            echo $value['ingreso'];
-            echo '</td>';
-            echo '<td>';
-            echo $value['estadia'];
             echo '</td>';
             echo '<td>';
             echo $value['tarjeta'];

@@ -24,14 +24,6 @@
                     <input type="text" class=" form-control input-sm validate[required]"  id="txt_telefono" name="txt_telefono" value='<?php echo $this->datosCliente[0]['telefono']; ?>'/>
                 </div>
                 <br><br><br>
-                <label for="txt_ingreso" class="col-xs-2 control-label">Ingreso:</label>
-                <div class="col-xs-2">
-                    <input type="text" class=" form-control input-sm validate[required]"  id="txt_ingreso" name="txt_ingreso" value='<?php echo $this->datosCliente[0]['ingreso']; ?>'/>
-                </div>
-                <label for="txt_estadia" class="col-xs-2 control-label">Estadia:</label>
-                <div class="col-xs-2">
-                    <input type="text" class=" form-control input-sm validate[required]"  id="txt_estadia" name="txt_estadia" value='<?php echo $this->datosCliente[0]['estadia']; ?>'/>
-                </div>
                 <label for="txt_tarjeta" class="col-xs-2 control-label">Tarjeta de Credito:</label>
                 <div class="col-xs-2">
                     <input type="text" class=" form-control input-sm validate[required]"  id="txt_nombre" name="txt_tarjeta" value='<?php echo $this->datosCliente[0]['tarjeta']; ?>'/>

@@ -28,7 +28,7 @@
         </tr>
         <?php
         $con = 1;
-        $mensaje = "'¿Desea eliminar este funcionario?'";
+        $mensaje = "'¿Desea eliminar esta compra?'";
         foreach ($this->listaFuncionarios as $lista => $value) {
             echo '<tr>';
             echo '<td>';
@@ -44,7 +44,7 @@
             ?>
             <?php if (Session::get('tipoUsuario') <= 1) { ?>
                 <?php
-                echo '<a class="btn-sm btn-primary" href="editarFuncionario/' . $value['id'] . '">Editar</a>&nbsp &nbsp &nbsp';
+                echo '<a class="btn-sm btn-primary" href="editarCompra/' . $value['id'] . '">Editar</a>&nbsp &nbsp &nbsp';
                 echo '<a class="btn-sm btn-warning" href="eliminarFuncionario/' . $value['id'] . '" onclick ="return confirm(' . $mensaje . ')">Eliminar</a>';
                 ?>
             <?php } ?>

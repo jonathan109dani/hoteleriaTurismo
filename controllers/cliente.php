@@ -26,32 +26,13 @@ class Cliente extends Controllers {
 
     function guardarCliente() {
 
-
-
         $datos = array();
-
         $datos ['txt_nombre'] = $_POST['txt_nombre'];
         $datos ['txt_id'] = $_POST['txt_id'];
         $datos ['txt_telefono'] = $_POST['txt_telefono'];
-        $datos ['txt_ingreso'] = $_POST['txt_ingreso'];
-        $datos ['txt_estadia'] = $_POST['txt_estadia'];
         $datos ['txt_tarjeta'] = $_POST['txt_tarjeta'];
-
-        $fechaIngreso = new DateTime($datos['txt_ingreso']);
-        $fechaSalida = new DateTime($datos['txt_estadia']);
-
-        $dias = $fechaIngreso->diff($fechaSalida);
-
-        $diferenciaDias = (int) $dias->format('%R%a');
-        if ($diferenciaDias >= 1) {
-            $this->model->guardarCliente($datos);
-            header("location: " . URL . "cliente/verClientes");
-        } else {
-            $this->view->title = 'Cliente';
-            $this->view->render('header');
-            $this->view->render('error/errorFechas');
-            $this->view->render('footer');
-        }
+        $this->model->guardarCliente($datos);
+        header("location: " . URL . "cliente/verClientes");
     }
 
     function editarCliente($id) {
@@ -67,8 +48,6 @@ class Cliente extends Controllers {
         $datos ['txt_nombre'] = $_POST['txt_nombre'];
         $datos ['txt_id'] = $_POST['txt_id'];
         $datos ['txt_telefono'] = $_POST['txt_telefono'];
-        $datos ['txt_ingreso'] = $_POST['txt_ingreso'];
-        $datos ['txt_estadia'] = $_POST['txt_estadia'];
         $datos ['txt_tarjeta'] = $_POST['txt_tarjeta'];
         $this->model->actualizarCliente($datos);
         header("location: " . URL . "cliente/verClientes");

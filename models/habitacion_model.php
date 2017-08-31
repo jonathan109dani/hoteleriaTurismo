@@ -30,6 +30,10 @@ Class Habitacion_Model extends Models {
         $consultaFuncionarios = $this->db->select("SELECT * FROM habitacion ");
         return $consultaFuncionarios;
     }
+    public function listaHabitaciones() {
+        $consultaFuncionarios = $this->db->select("SELECT * FROM tipohabitacion ");
+        return $consultaFuncionarios;
+    }
 
     public function datosHabitacion($numero) {
         $consultaExistenciaHabitacion = $this->db->select("SELECT * FROM habitacion "
@@ -82,6 +86,17 @@ Class Habitacion_Model extends Models {
                 . "FROM habitacion "
                 . "WHERE tipo LIKE '%". $ced_estudiante . "%'");
         echo json_encode($resultado);
+    }
+        public function datosTipoHabitacion($tipo) {
+        $consultaExistenciaFactura = $this->db->select("SELECT * FROM habitacion "
+                . "WHERE id = " . $tipo . " ");
+
+        if ($consultaExistenciaFactura != null) {
+            return $consultaExistenciaFactura;
+        } else {
+            echo 'No se ha encontrado la factura';
+            die;
+        }
     }
 
 }

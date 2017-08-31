@@ -37,6 +37,7 @@ class Habitacion extends Controllers {
         $this->view->title = 'Habitacion';
         $this->view->render('header');
         $this->view->datosHabitacion = $this->model->datosHabitacion($numero);
+        $this->view->listaHabitaciones = $this->model->listaHabitaciones();
         $this->view->render('habitacion/editarHabitacion');
         $this->view->render('footer');
     }

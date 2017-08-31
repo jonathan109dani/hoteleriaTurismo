@@ -11,7 +11,9 @@
             <th>Nombre Cliente</th>
             <th>Tipo de Habitación</th>
             <th>Precio</th>
-            <th>Número de Habitación</th>
+            <th class="text-center">Número de Habitación</th>
+            <th>Ingreso</th>
+            <th>Salida</th>
             <?php if (Session::get('tipoUsuario') <= 2) { ?>
                 <th colspan="2" class="text-center">Acción</th>
             <?php } ?>
@@ -60,8 +62,14 @@
             }
 //            echo $value['precio'];
             echo '</td>';
-            echo '<td>';
+            echo '<td class="text-center">';
             echo $value['numeroFactura'];
+            echo '</td>';
+            echo '<td>';
+            echo $value['ingreso'];
+            echo '</td>';
+            echo '<td>';
+            echo $value['estadia'];
             echo '</td>';
             echo '<td class=text-center>';
             ?>

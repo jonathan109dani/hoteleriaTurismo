@@ -34,9 +34,11 @@
                             ?> > <?php
                             echo $value['moneda'] . "</option>";
                             ?>
-                            <option value="Dolar">Dolar</option>
-                            <option value="Euro">Euro</option>
-                            <option value="Colon">Colon</option>
+                            <option value="&#36;">Dolar</option>
+                            <option value="&#8364;">Euro</option>
+                            <option value="&#162;">Colón</option>
+                            <option value="&#165;">Yen</option>
+                            <option value="&#163;">Libra</option>
                             <?php
                         }
                         ?>

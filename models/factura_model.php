@@ -13,7 +13,9 @@ Class Factura_Model extends Models {
         $this->db->insert('factura', array(
             'nombreCliente' => $datos['txt_nombreCliente'],
             'habitacion' => $datos['txt_tipo'],
-            'numeroFactura' => $datos['txt_numeroFactura']));
+            'numeroFactura' => $datos['txt_numeroFactura'],
+            'ingreso' => $datos['txt_ingreso'],
+            'estadia' => $datos['txt_estadia']));
     }
 
     public function listaFacturas() {
@@ -40,6 +42,18 @@ Class Factura_Model extends Models {
         return $consultaTipo;
     }
 
+    public function consultaProductos_habitacion() {
+        //ver Clientes
+        $consultaTipo = $this->db->select("SELECT * FROM productos_habitacion ");
+        return $consultaTipo;
+    }
+
+    public function consultaProductos() {
+        //ver Clientes
+        $consultaTipo = $this->db->select("SELECT * FROM productos ");
+        return $consultaTipo;
+    }
+
     public function datosFactura($numeroFactura) {
         $consultaExistenciaFactura = $this->db->select("SELECT * FROM factura "
                 . "WHERE numeroFactura = " . $numeroFactura . " ");
@@ -63,7 +77,9 @@ Class Factura_Model extends Models {
                 'nombreCliente' => $datos['txt_nombreCliente'],
                 'habitacion' => $datos['txt_habitacion'],
                 'precio' => $datos['txt_precio'],
-                'numeroFactura' => $datos['txt_numeroFactura']);
+                'numeroFactura' => $datos['txt_numeroFactura'],
+                'ingreso' => $datos['txt_ingreso'],
+                'estadia' => $datos['txt_estadia']);
 
             $this->db->update('factura', $posData, "`numeroFactura` = '{$datos['txt_numeroFactura']}'");
         } else {
@@ -103,6 +119,17 @@ Class Factura_Model extends Models {
             echo 'Error...</br>Ya existe un factura con ese ID';
             die;
         }
+        $consultaExistenciaPreMatricula = $this->db->select("SELECT * FROM productos_habitacion "
+                . "WHERE numeroHabitacion = '" . $numeroFactura . "' ");
+
+        if ($consultaExistenciaPreMatricula != null) {
+            $this->db->delete('productos_habitacion', "`numeroHabitacion` = '{$numeroFactura}'");
+        } else {
+            //Sino Inserto datos de Pre-Matricula del Estudiante
+            echo 'Error...</br>Ya existe un factura con ese ID';
+            die;
+        }
+        
     }
 
     public function buscarHabitacionesLibres() {
