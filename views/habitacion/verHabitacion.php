@@ -39,7 +39,21 @@
             echo $value['piso'];
             echo '</td>';
             echo '<td>';
-            echo $value['tipo'];
+            if ($value['tipo'] == 1) {
+                echo 'Sencilla';
+            } elseif ($value['tipo'] == 2) {
+                echo 'Doble';
+            } elseif ($value['tipo'] == 3) {
+                echo 'Triple';
+            } elseif ($value['tipo'] == 4) {
+                echo 'Quadruple';
+            } elseif ($value['tipo'] == 5) {
+                echo 'Presi';
+            } elseif ($value['tipo'] == 6) {
+                echo 'Jr Suit';
+            } elseif ($value['tipo'] == 7) {
+                echo 'Suit';
+            }
             echo '</td>';
             echo '<td class=text-center>';
             ?>

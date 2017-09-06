@@ -129,7 +129,6 @@ Class Factura_Model extends Models {
             echo 'Error...</br>Ya existe un factura con ese ID';
             die;
         }
-        
     }
 
     public function buscarHabitacionesLibres() {
@@ -137,6 +136,14 @@ Class Factura_Model extends Models {
                 . "FROM habitacion "
                 . "WHERE numero NOT IN (SELECT numeroFactura FROM factura) ");
         return $resultado;
+    }
+
+    public function cargaHabitaciones($idTipoHabitacion) {
+        $resultado = $this->db->select("SELECT numero "
+                . "FROM habitacion "
+                . "WHERE numero NOT IN (SELECT numeroFactura FROM factura) "
+                . "AND tipo = " . $idTipoHabitacion . " ");
+        echo json_encode($resultado);
     }
 
 }

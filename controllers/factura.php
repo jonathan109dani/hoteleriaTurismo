@@ -6,7 +6,7 @@ class Factura extends Controllers {
         parent::__construct();
         Auth::handleLogin();
         Auth::nivelDeSeguridad2();
-        $this->view->js = array('factura/js/jsFactura.js', 'factura/js/jsFactura.js');
+        $this->view->js = array('factura/js/jsFactura.js');
     }
 
     function agregarfactura() {
@@ -94,6 +94,10 @@ class Factura extends Controllers {
         $this->view->title = 'Factura';
         $this->model->eliminarFactura($id);
         header("location: " . URL . "factura/verFacturas");
+    }
+
+    function cargaHabitaciones($idTipoHabitacion) {
+        $this->model->cargaHabitaciones($idTipoHabitacion);
     }
 
 }

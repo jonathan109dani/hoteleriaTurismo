@@ -33,6 +33,18 @@ $(function ()
         changeMonth: true,
         changeYear: true
     });
+
+
+    $("#txt_tipo").change(function () {
+        $("#txt_numeroFactura").empty();
+        var nivelSeleccionado = $("#txt_tipo").val();
+        $.getJSON('../factura/cargaHabitaciones/' + nivelSeleccionado, function (Gru) {
+            $('#txt_numeroFactura').append('<option value="">Seleccione</option>');
+            for (var iP = 0; iP < Gru.length; iP++) {
+                $("#txt_numeroFactura").append('<option value="' + Gru[iP].numero + '">' + Gru[iP].numero + '</option>');
+            }
+        });
+    });
 });
 
 

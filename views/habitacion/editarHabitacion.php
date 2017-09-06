@@ -25,8 +25,8 @@
                         <select  class="form-control input-sm" name="txt_tipo" id="txt_tipo">   
                             <?php
                             foreach ($this->listaHabitaciones as $value) {
-                                echo "<option value='" . $value['descripcion'] . "' ";
-                                if ($value['descripcion'] == $this->datosHabitacion[0]['tipo'])
+                                echo "<option value='" . $value['id'] . "' ";
+                                if ($value['id'] == $this->datosHabitacion[0]['tipo'])
                                     echo "selected";
                                 ?> > <?php
                                 echo $value['descripcion'] . "</option>";
