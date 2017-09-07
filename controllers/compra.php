@@ -18,30 +18,7 @@ class Compra extends Controllers {
         $this->view->render('footer');
     }
 
-    function verFuncionarios() {
-        $this->view->title = 'Funcionario';
-        $this->view->render('header');
-        $this->view->listaFuncionarios = $this->model->listaFuncionarios();
-        $this->view->render('funcionario/verFuncionarios');
-        $this->view->render('footer');
-    }
-
-    function guardarFuncionario() {
-        $datos = array();
-        $datos ['txt_nombre'] = $_POST['txt_nombre'];
-        $datos ['txt_id'] = $_POST['txt_id'];
-        $datos ['txt_puesto'] = $_POST['txt_puesto'];
-        $this->model->guardarFuncionario($datos);
-        header("location: " . URL . "funcionario/verFuncionarios");
-    }
-
-    function editarFuncionario($id) {
-        $this->view->title = 'Funcionario';
-        $this->view->render('header');
-        $this->view->datosFuncionario = $this->model->datosFuncionario($id);
-        $this->view->render('funcionario/editarFuncionario');
-        $this->view->render('footer');
-    }
+    
 
     function actualizarCompra() {
         $datos = array();
@@ -51,11 +28,7 @@ class Compra extends Controllers {
         header("location: " . URL );
     }
 
-    function eliminarFuncionario($id) {
-        $this->view->title = 'Funcionario';
-        $this->model->eliminarFuncionario($id);
-        header("location: " . URL . "funcionario/verFuncionarios");
-    }
+
 
 
 }

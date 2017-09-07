@@ -116,6 +116,10 @@
                                     <?php if (Session::get('tipoUsuario') <= 2) { ?>
                                         <li><a class="navbar-nav" href="<?php echo URL; ?>compra/agregarCompra">Compras u otros cargos</a></li>                                  
                                     <?php } ?>
+
+                                    <?php if (Session::get('tipoUsuario') <= 2) { ?>
+                                        <li><a class="navbar-nav" href="<?php echo URL; ?>rackHabitacion/rackMensual">Rack Mensual</a></li>                                  
+                                    <?php } ?>
                                 </ul>
                                 <ul class="nav navbar-nav navbar-right">
                                     <li class="dropdown">
