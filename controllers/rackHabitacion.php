@@ -21,7 +21,9 @@ class RackHabitacion extends Controllers {
         $this->view->title = 'Rack Mensual';
         //Se manda a ejecutar el header, contenido principal (views/horario/index) y el footer
         $this->view->render('header');
-        $fechaActual = getdate();
+        $fechaActual = new DateTime();
+//        print_r($fechaActual->format('n'));
+//        die;
         $this->view->mesActual = $fechaActual;
         $this->view->consultaTipoHabitacion = $this->model->consultaTipoHabitacion();
         $this->view->consultaNuHabitacion = $this->model->consultaNuHabitacion();
