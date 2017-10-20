@@ -37,18 +37,18 @@
 //                        echo $fechaIngreso->format('n');
 //                        echo $this->mesActual->format('n');
 //                        die;
-                        if ($fechaIngreso->format('n') == $this->mesActual->format('n')) {
-                            if ($i >= (int) $fechaIngreso->format('d') && ($i < (int) $fechaSalida->format('d') || $fechaSalida->format('n') > $this->mesActual->format('n') )) {
-                                $diasEstancia = $fechaIngreso->diff($fechaSalida);
-                                $diferenciaDiasEstancia = (int) $diasEstancia->format('%R%a');
+                        if($fechaIngreso->format('n')==$this->mesActual->format('n')){
+                        if ($i >= (int)$fechaIngreso->format('d') && ($i < (int)$fechaSalida->format('d')|| $fechaSalida->format('n')>$this->mesActual->format('n') )) {
+                            $diasEstancia = $fechaIngreso->diff($fechaSalida);
+                            $diferenciaDiasEstancia = (int) $diasEstancia->format('%R%a');
 
-                                $diasFechaActual = $this->mesActual->diff($fechaIngreso);
-                                $diferenciaDiasActual = (int) $diasFechaActual->format('%R%a');
-                                //echo $diferenciaDiasEstancia;
-                                if ($i >= 0 && $diferenciaDiasActual < $i) {
-                                    echo 'X';
-                                }
+                            $diasFechaActual = $this->mesActual->diff($fechaIngreso);
+                            $diferenciaDiasActual = (int) $diasFechaActual->format('%R%a');
+                            //echo $diferenciaDiasEstancia;
+                            if ($i >= 0 && $diferenciaDiasActual < $i) {
+                                echo 'X';
                             }
+                        }
                         }
                     }
                 }
@@ -65,7 +65,6 @@
         </tr>
     </table>
                
-    <a class="btn-sm btn-primary" href="<?php echo URL; ?>rackHabitacion/rackMesAnterior">Anterior</a>
-    <a class="btn-sm btn-primary" href="<?php echo URL; ?>rackHabitacion/rackMesSiguiente">Siguiente</a>
-    
+    <a class="btn-sm btn-primary" href="<?php echo URL; ?>rackHabitacion/rackMensual">Siguiente</a>
+  
 </center>
