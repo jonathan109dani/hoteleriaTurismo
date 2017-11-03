@@ -155,7 +155,11 @@
                                 <ul class="nav navbar-nav">
                                     <li><a href="<?php echo URL; ?>login">Iniciar Sesión</a></li>
                                 </ul>
+                                <ul class="nav navbar-nav">
+                                    <li><a href="<?php echo URL; ?>registrarse/agregarUsuario">Registrarse</a></li>
+                                </ul>
                             </div>
+                            
                         </div>
                     </nav>
                 </div>
